@@ -1,0 +1,220 @@
+.content,
+.tutup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.game {
+    width: 700px;
+    height: 550px;
+    padding: 5px;
+    background-color: rgba(44, 54, 57, .8);
+    box-shadow: 0 0 19px 5px rgba(44, 54, 57, .8);
+    display: flex;
+    justify-content: center;
+    align-content: flex-start;
+    position: relative;
+    flex-wrap: wrap;
+    border-radius: 10px;
+}
+
+.game .soal,
+.jawaban,
+.pilihan {
+    margin: 5px 0;
+}
+
+.game .pilihan>*,
+.game .soal>*:not(#oprator) {
+    border: 2px solid black;
+}
+
+.game .soal {
+    width: 90%;
+    height: 200px;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.game .soal span {
+    width: 150px;
+    height: 150px;
+    background-color: #E9E8E8;
+    text-align: center;
+    line-height: 150px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 1px rgb(66, 56, 56);
+    font-size: 6em;
+    font-weight: bold;
+    cursor: context-menu;
+}
+
+#oprator {
+    background-color: transparent;
+    box-shadow: none;
+    color: white;
+}
+
+.game .jawaban {
+    width: 90%;
+    height: 110px;
+    background-color: transparent;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.jawaban span {
+    height: 90px;
+    width: 80%;
+    background-color: white;
+    border-radius: 10px;
+    text-align: center;
+    opacity: 1;
+    transition: .3s;
+}
+
+/* .jawaban span.display {
+    opacity: 1;
+} */
+
+.game .pilihan {
+    width: 90%;
+    height: 150px;
+    background-color: transparent;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.pilihan span {
+    width: 90px;
+    height: 90px;
+    background-color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    transition: .1s;
+}
+
+.pilihan span:hover {
+    box-shadow: 0 0 5px rgba(0, 0, 0, .3);
+    transform: scale(1.2);
+}
+
+.pilihan span h1,
+.jawaban span h1 {
+    line-height: 90px;
+}
+
+button {
+    width: 30%;
+    height: 40px;
+    position: absolute;
+    bottom: 10px;
+    background-color: darkgray;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 1px grey;
+    cursor: pointer;
+}
+
+.cover .hasilJawaban {
+    position: fixed;
+    background-color: rgba(0, 0, 0, .6);
+    width: 100%;
+    height: 100vh;
+    z-index: 99;
+}
+
+.waktu {
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    background-color: transparent;
+    height: 50px;
+    display: flex;
+    padding: 0 5px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.waktu>* {
+    display: inline-block;
+    width: 120px;
+    height: 30px;
+    margin: 0 4px;
+    line-height: 30px;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: .2px;
+    background-color: rgba(44, 54, 57, .8);
+    color: white;
+}
+
+.habis {
+    position: absolute;
+    width: 0;
+    height: 0;
+    background-color: rgba(0, 0, 0, .9);
+    z-index: 999;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.habis::before {
+    content: "Waktu Habis";
+}
+
+/*mobail*/
+
+@media only screen and (max-width: 600px) {
+    .cover .game {
+        width: 270px;
+        height: 480px;
+    }
+
+    .cover .game .soal span {
+        font-size: 2em;
+        height: 100px;
+        line-height: 100px;
+    }
+
+    .soal #oprator {
+        font-size: 3em;
+    }
+
+    .cover .game .pilihan span {
+        height: 60px;
+        margin: 0 5px;
+        width: 90px;
+        padding: 0 2px;
+    }
+
+    .cover .game .pilihan span h1 {
+        font-size: 2em;
+        line-height: 60px;
+
+    }
+
+    .cover .waktu {
+        top: 0;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .cover .waktu span {
+        border-radius: 5px;
+    }
+}
